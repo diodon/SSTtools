@@ -1,5 +1,5 @@
-# DHWtools
-Tools for extracting DHW and related variables from [CRW ERDDAP server](http://oos.soest.hawaii.edu/erddap/griddap/NOAA_DHW_5km.html)
+# SST tools
+Tools for extracting DHW and related variables from [CRW ERDDAP server](http://oos.soest.hawaii.edu/erddap/griddap/NOAA_DHW_5km.html) and SST varibles from [NASA-JPL MUR SST ERDDAP server](https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html)
 
 ## DHW_flexiharvester
 
@@ -21,3 +21,25 @@ optional arguments:
   -fout FOUT        name of the output CSV file. Default DHWoutput.csv
 
 ```
+
+## MURSST_flexiharvester
+
+A small python function that harverst MURSST and related variables given coordinates and a date range. The results are stored in a csv file.  
+
+```
+usage: MURSST_flexiharvester.py [-h] -lat LATITUDE -lon LONGITUDE -from
+                                DATE_START -to DATE_END [-fout FOUT]
+
+Harvest MURSST and related variables from NASA-JPL ERDDAP server. The results
+are stored in a csv file
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -lat LATITUDE     latitude in decimal degrees. Southern hemisphere negative
+  -lon LONGITUDE    longitude in decimal degrees. Western hemisphere negative
+  -from DATE_START  start date in yyyy-mm-dd
+  -to DATE_END      end date in yyyy-mm-dd
+  -fout FOUT        name of the output CSV file. Default SSToutput.csv
+
+```
+
