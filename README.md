@@ -9,8 +9,8 @@ A small python function that harverst DHW and related variables given coordinate
 usage: DHW_flexiharvester.py [-h] -lat LATITUDE -lon LONGITUDE -from
                              DATE_START -to DATE_END [-fout FOUT]
 
-function to harvest DHW and related variables from CRW ERDDAP server. The
-results are stores in a csv file
+Harvest DHW and related variables from CRW ERDDAP server. The results are
+stored in a csv file
 
 optional arguments:
   -h, --help        show this help message and exit
