@@ -1,5 +1,5 @@
 # DHWtools
-Tools for extracting DHW and related variables form CRW erddap server
+Tools for extracting DHW and related variables form CRW ERDDAP server
 
 ## DHW_flexiharvester
 
