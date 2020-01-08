@@ -1,5 +1,5 @@
 # DHWtools
-Tools for extracting DHW and related variables form CRW ERDDAP server
+Tools for extracting DHW and related variables from [CRW ERDDAP server](http://oos.soest.hawaii.edu/erddap/griddap/NOAA_DHW_5km.html)
 
 ## DHW_flexiharvester
 
