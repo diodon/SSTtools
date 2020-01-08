@@ -28,7 +28,7 @@ def getDHW(latitude, longitude, date_start, date_end, fout):
     :param date_start: start date in yyyy-mm-dd
     :param date_end: end date in yyyy-mm-dd
     :param fout: file name for the results
-    :return: nothing
+    :return: info about number of records found and output file name
     """
 
     serverURL = 'http://oos.soest.hawaii.edu/erddap/griddap/NOAA_DHW_5km.csv?'
@@ -49,10 +49,9 @@ def getDHW(latitude, longitude, date_start, date_end, fout):
         print("Failed")
 
     DHW.to_csv(fout, index=None)
-    print('Write {} DHW values into {}'.format(len(DHW), fout))
 
+    return print('Write {} DHW values into {}'.format(len(DHW), fout))
 
-    return
 
 
 if __name__ == '__main__':
