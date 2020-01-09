@@ -67,7 +67,7 @@ optional arguments:
 
 ## SEASCAPE_gridextractor
 
-Extract SEASCAPE maps (grids) given a coordinates and date ranges
+Extract SEASCAPE maps (grids) given a coordinates and date ranges. The result is saved in a netCDF file
 
 ```
 usage: SEASCAPE_gridextractor.py [-h] -type TYPE -minlat MINLAT -minlon MINLON
