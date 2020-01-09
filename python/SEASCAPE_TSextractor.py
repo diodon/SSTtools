@@ -1,7 +1,6 @@
 import sys
 import argparse
 
-import pandas as pd
 import urllib
 
 
@@ -49,14 +48,11 @@ def getDHW(type, latitude, longitude, date_start, date_end, fout):
     for var in varNames[1:]:
         varList = varList + "," + var + constrains
     url = serverURL + varList
-    ##print(url)
+
     try:
-        DHW = pd.read_csv(url)
-        ## DHW = DHW.iloc[1:, ]     ##remove units row
+        urllib.request.urlretrieve(url, fout)
     except:
         print("Failed")
-
-    DHW.to_csv(fout, index=None)
 
     return print('Write {} SEASCAPE values into {}'.format(len(DHW), fout))
 
