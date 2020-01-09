@@ -48,7 +48,7 @@ def getDHW(type, minlat, minlon, maxlat, maxlon, date_start, date_end, fout):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Harvest SEASCPE classes from NOAA CoastWatch ERDDAP server. The results are stored in a csv file')
+    parser = argparse.ArgumentParser(description='Harvest SEASCAPE classes (grid) from NOAA CoastWatch ERDDAP server. The results are stored in a netCDF file')
     parser.add_argument('-type', dest='type', help='monthly (m) or 8day (8d) product', required=True)
     parser.add_argument('-minlat', dest='minlat', help='latitude in decimal degrees. Southern hemisphere negative', required=True)
     parser.add_argument('-minlon', dest='minlon', help='longitude in decimal degrees. Western hemisphere negative', required=True)
@@ -56,8 +56,8 @@ if __name__ == '__main__':
     parser.add_argument('-maxlon', dest='maxlon', help='longitude in decimal degrees. Western hemisphere negative', required=True)
     parser.add_argument('-from', dest='date_start', help='start date in yyyy-mm-dd', required=True)
     parser.add_argument('-to', dest='date_end', help='end date in yyyy-mm-dd', required=True)
-    parser.add_argument('-fout', dest='fout', help='name of the output CSV file. Default SEASCAPEgridoutput.nc',
-                        default='SEASCAPEoutput.nc', required=False)
+    parser.add_argument('-fout', dest='fout', help='name of the output CSV file. Default SEASCAPEgrid_output.nc',
+                        default='SEASCAPEgrid_output.nc', required=False)
     args = parser.parse_args()
 
     getDHW(args.type, args.minlat, args.minlon, args.maxlat, args.maxlon, args.date_start, args.date_end, args.fout)
