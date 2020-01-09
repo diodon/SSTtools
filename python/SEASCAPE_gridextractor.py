@@ -56,7 +56,7 @@ if __name__ == '__main__':
     parser.add_argument('-maxlon', dest='maxlon', help='longitude in decimal degrees. Western hemisphere negative', required=True)
     parser.add_argument('-from', dest='date_start', help='start date in yyyy-mm-dd', required=True)
     parser.add_argument('-to', dest='date_end', help='end date in yyyy-mm-dd', required=True)
-    parser.add_argument('-fout', dest='fout', help='name of the output CSV file. Default SEASCAPEgrid_output.nc',
+    parser.add_argument('-fout', dest='fout', help='name of the output netCDF file. Default SEASCAPEgrid_output.nc',
                         default='SEASCAPEgrid_output.nc', required=False)
     args = parser.parse_args()
 

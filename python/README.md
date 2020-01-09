@@ -86,7 +86,7 @@ optional arguments:
   -maxlon MAXLON    longitude in decimal degrees. Western hemisphere negative
   -from DATE_START  start date in yyyy-mm-dd
   -to DATE_END      end date in yyyy-mm-dd
-  -fout FOUT        name of the output CSV file. Default
+  -fout FOUT        name of the output netCDF file. Default
                     SEASCAPEgrid_output.nc
 
 ```
