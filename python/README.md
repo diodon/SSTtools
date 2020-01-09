@@ -74,8 +74,8 @@ usage: SEASCAPE_gridextractor.py [-h] -type TYPE -minlat MINLAT -minlon MINLON
                                  -maxlat MAXLAT -maxlon MAXLON -from
                                  DATE_START -to DATE_END [-fout FOUT]
 
-Harvest SEASCPE classes from NOAA CoastWatch ERDDAP server. The results are
-stored in a csv file
+Harvest SEASCAPE classes (grid) from NOAA CoastWatch ERDDAP server. The
+results are stored in a netCDF file
 
 optional arguments:
   -h, --help        show this help message and exit
@@ -86,7 +86,8 @@ optional arguments:
   -maxlon MAXLON    longitude in decimal degrees. Western hemisphere negative
   -from DATE_START  start date in yyyy-mm-dd
   -to DATE_END      end date in yyyy-mm-dd
-  -fout FOUT        name of the output CSV file. Default SEASCAPEgridoutput.nc
+  -fout FOUT        name of the output CSV file. Default
+                    SEASCAPEgrid_output.nc
 
 ```
 
