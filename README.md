@@ -43,3 +43,25 @@ optional arguments:
 
 ```
 
+## SEASCAPE_TSextractor
+
+A small python function that harverst SEASCAPE classes and related variables given coordinates and a date range. The results are stored in a csv file.  
+
+```
+usage: SEASCAPE_TSextractor.py [-h] -type TYPE -lat LATITUDE -lon LONGITUDE
+                               -from DATE_START -to DATE_END [-fout FOUT]
+
+Harvest SEASCPE classes from NOAA CoastWatch ERDDAP server. The results are
+stored in a csv file
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -type TYPE        monthly (m) or 8day (8d) product
+  -lat LATITUDE     latitude in decimal degrees. Southern hemisphere negative
+  -lon LONGITUDE    longitude in decimal degrees. Western hemisphere negative
+  -from DATE_START  start date in yyyy-mm-dd
+  -to DATE_END      end date in yyyy-mm-dd
+  -fout FOUT        name of the output CSV file. Default SEASCAPEoutput.csv
+
+```
+
