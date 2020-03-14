@@ -3,7 +3,7 @@ Tools for extracting DHW and related variables from [CRW ERDDAP server](http://o
 
 ## DHW_flexiharvester
 
-A small python function that harverst DHW and related variables given coordinates and a date range. The results are stored in a csv file.  
+A small python function that harvest DHW and related variables given coordinates and a date range. If the output file name is given , the results are stored in a csv file. The function returns a pandas data frame with the extracted variables.  
 
 ```
 usage: DHW_flexiharvester.py [-h] -lat LATITUDE -lon LONGITUDE -from
