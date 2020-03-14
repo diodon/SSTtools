@@ -1,7 +1,7 @@
 import sys
 import argparse
 
-import urllib
+import urllib.parse
 
 
 def makeRange(rangeValue):
@@ -30,7 +30,8 @@ def getDHW(latitude, longitude, date_start, date_end, fout):
     :return: info about number of records found and output file name
     """
 
-    serverURL = 'http://oos.soest.hawaii.edu/erddap/griddap/NOAA_DHW_5km.csv?'
+    serverURL = 'https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km.csv?'
+
     varNames = ['CRW_DHW', 'CRW_HOTSPOT', 'CRW_SST', 'CRW_SSTANOMALY']
     varNames_DHW = ['time',  'latitude', 'longitude']
 
@@ -55,9 +56,12 @@ if __name__ == '__main__':
     parser.add_argument('-lat', dest='latitude', help='latitude in decimal degrees', required=True)
     parser.add_argument('-lon', dest='longitude', help='longitude in decimal degrees', required=True)
     parser.add_argument('-from', dest='date_start', help='start date in yyyy-mm-dd', required=True)
-    parser.add_argument('-to', dest='date_end', help='end date in yyyy-mm-dd', required=True)
+    parser.add_argument('-to', dest='date_end', help='end date in yyyy-mm-dd', required=False)
     parser.add_argument('-fout', dest='fout', help='name of hte output CSV file', default='DHWoutput.csv', required=False)
     args = parser.parse_args()
+
+    if args.date_end == None:
+        args.date_end = args.date_start
 
     getDHW(args.latitude, args.longitude, args.date_start, args.date_end, args.fout)
 
