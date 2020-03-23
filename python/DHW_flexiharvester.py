@@ -49,6 +49,8 @@ def getDHW(latitude, longitude, date_start, date_end, fout):
         df.to_csv(fout, index=False)
         print('results written to {}'.format(fout))
 
+    print(df)
+    
     return df
 
 
