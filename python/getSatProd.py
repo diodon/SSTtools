@@ -29,9 +29,6 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
                     "analysis_error[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'ssta':     "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41anom1day.csv?"
                     "sstAnom[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
-        'sstclim':  "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41clim.csv?"
-                    "mean_sst[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
-                    "standard_deviation[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'poc1d':    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOC1day.csv?"
                     "poc[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'poc8d':    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOC8day.csv?"
@@ -101,7 +98,7 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser = argparse.ArgumentParser(description="Get different satellite products from NOAAs ERDDAP servers. The valid parameters are: \n"
-                                                 "- sst, ssta, sstclim: MURSST cloudless sea surface temperature, anomaly and climatology \n"
+                                                 "- sst, ssta: MURSST cloudless sea surface temperature, and  sst anomaly  \n"
                                                  "- poc1d, poc8d, poc1m: MODIS particulate organic cabon, 1 day, 8 day, 1 month \n"
                                                  "- pic1d, pic8d, pic1m: MODIS particulate inorganic cabon, 1 day, 8 day, 1 month \n"
                                                  "- chl1d, chl8d, chl1m: VIRRS chlorophyll a concetration, 1 day, 8 days, 1 month \n"

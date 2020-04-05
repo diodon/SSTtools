@@ -15,7 +15,7 @@ usage: getSatProd.py [-h] -param PARAM [PARAM ...] -latmin LAT_MIN
                      [-print]
 
 Get different satellite products from NOAAs ERDDAP servers. The valid parameters are: 
-- sst, ssta, sstclim: MURSST cloudless sea surface temperature, anomaly and climatology 
+- sst, ssta: MURSST cloudless sea surface temperature, and  sst anomaly  
 - poc1d, poc8d, poc1m: MODIS particulate organic cabon, 1 day, 8 day, 1 month 
 - pic1d, pic8d, pic1m: MODIS particulate inorganic cabon, 1 day, 8 day, 1 month 
 - chl1d, chl8d, chl1m: VIRRS chlorophyll a concetration, 1 day, 8 days, 1 month 
