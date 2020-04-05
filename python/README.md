@@ -30,12 +30,15 @@ optional arguments:
   -h, --help            show this help message and exit
   -param PARAM [PARAM ...]
                         latitude in decimal degrees
-  -latmin LAT_MIN       latitude in decimal degrees
-  -latmax LAT_MAX       latitude in decimal degrees
-  -lonmin LON_MIN       longitude in decimal degrees
-  -lonmax LON_MAX       longitude in decimal degrees
+  -latmin LAT_MIN       start latitude in decimal degrees
+  -latmax LAT_MAX       end latitude in decimal degrees. If missing extract
+                        for start latitude only
+  -lonmin LON_MIN       start longitude in decimal degrees
+  -lonmax LON_MAX       end longitude in decimal degrees. If missing extract
+                        for start longitude only
   -ds DATE_START        start date in yyyy-mm-dd
-  -de DATE_END          end date in yyyy-mm-dd
+  -de DATE_END          end date in yyyy-mm-dd. If missing retrieve for start
+                        date only
   -loc LOCALITY         name of the locality
   -out OUTPATH          path where to write the result file
   -print                print the results to the screen

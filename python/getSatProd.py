@@ -113,12 +113,14 @@ if __name__ == '__main__':
                                                  "NOTE: THINK before request. Do not ask for large grid over a long period of time",
                                      formatter_class=RawDescriptionHelpFormatter)
     parser.add_argument('-param', dest='param', help='latitude in decimal degrees', nargs='+', required=True)
-    parser.add_argument('-latmin', dest='lat_min', help='latitude in decimal degrees', required=True)
-    parser.add_argument('-latmax', dest='lat_max', help='latitude in decimal degrees', required=False)
-    parser.add_argument('-lonmin', dest='lon_min', help='longitude in decimal degrees', required=True)
-    parser.add_argument('-lonmax', dest='lon_max', help='longitude in decimal degrees', required=False)
+    parser.add_argument('-latmin', dest='lat_min', help='start latitude in decimal degrees', required=True)
+    parser.add_argument('-latmax', dest='lat_max', help='end latitude in decimal degrees. If missing extract for start latitude only',
+                        required=False)
+    parser.add_argument('-lonmin', dest='lon_min', help='start longitude in decimal degrees', required=True)
+    parser.add_argument('-lonmax', dest='lon_max', help='end longitude in decimal degrees. If missing extract for start longitude only',
+                        required=False)
     parser.add_argument('-ds', dest='date_start', help='start date in yyyy-mm-dd', required=True)
-    parser.add_argument('-de', dest='date_end', help='end date in yyyy-mm-dd', required=False)
+    parser.add_argument('-de', dest='date_end', help='end date in yyyy-mm-dd. If missing retrieve for start date only', required=False)
     parser.add_argument('-loc', dest='locality', help='name of the locality', default="satprod", required=False)
     parser.add_argument('-out', dest='outpath', help='path where to write the result file', default='./', required=False)
     parser.add_argument('-print', dest='screen_print', help='print the results to the screen', action='store_true',
