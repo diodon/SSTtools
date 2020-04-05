@@ -1,6 +1,50 @@
 # Python SST tools
 Tools for extracting DHW and related variables from [CRW ERDDAP server](http://oos.soest.hawaii.edu/erddap/griddap/NOAA_DHW_5km.html) and SST variables from [NASA-JPL ERDDAP server](https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.html)
 
+
+## getSatProd
+
+Get satellite product. A versatile comprehensive tool to retrieve several parameter from a single coordinate or a grid from a single date or a range of dates. Every parameter is stored in a separate file. 
+
+**NOTE**: THINK before retrieve. It is very easy to ask for hundreds of thousands of values if you specify a large grid over long time. 
+
+```
+usage: getSatProd.py [-h] -param PARAM [PARAM ...] -latmin LAT_MIN
+                     [-latmax LAT_MAX] -lonmin LON_MIN [-lonmax LON_MAX] -ds
+                     DATE_START [-de DATE_END] [-loc LOCALITY] [-out OUTPATH]
+                     [-print]
+
+Get different satellite products from NOAAs ERDDAP servers. The valid parameters are: 
+- sst, ssta, sstclim: MURSST cloudless sea surface temperature, anomaly and climatology 
+- poc1d, poc8d, poc1m: MODIS particulate organic cabon, 1 day, 8 day, 1 month 
+- pic1d, pic8d, pic1m: MODIS particulate inorganic cabon, 1 day, 8 day, 1 month 
+- chl1d, chl8d, chl1m: VIRRS chlorophyll a concetration, 1 day, 8 days, 1 month 
+- dhw: coral reef watch degree heating week products 
+- par1d, par8d, par1m: Total Photosynthetic Available Radiation, 1 day, 8 day, 1 month 
+- pp1d, pp8d, pp1m: Primary Productivity, 1 day, 8 day, 1 month 
+- ssc8d, ssc1m: Seascapes classes, 8 day, 1 month 
+- prec1d: Total daily rainfall 
+NOTE: THINK before request. Do not ask for large grid over a long period of time
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -param PARAM [PARAM ...]
+                        latitude in decimal degrees
+  -latmin LAT_MIN       latitude in decimal degrees
+  -latmax LAT_MAX       latitude in decimal degrees
+  -lonmin LON_MIN       longitude in decimal degrees
+  -lonmax LON_MAX       longitude in decimal degrees
+  -ds DATE_START        start date in yyyy-mm-dd
+  -de DATE_END          end date in yyyy-mm-dd
+  -loc LOCALITY         name of the locality
+  -out OUTPATH          path where to write the result file
+  -print                print the results to the screen
+
+
+```
+
+---------------------------
+
 ## DHW_flexiharvester
 
 A small python function that harvest DHW and related variables given coordinates and a date range. If the output file name is given , the results are stored in a csv file. The function returns a pandas data frame with the extracted variables.  

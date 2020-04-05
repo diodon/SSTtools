@@ -7,6 +7,21 @@ import pandas as pd
 
 
 def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, locality, outpath, screen_print):
+    """
+    get satellite products from NOAAs ERDDAP servers.
+    E. Klein. ekleins@gmail.com
+    :param params: list of requested params
+    :param lat_min: latitude min
+    :param lat_max: latitude max
+    :param lon_min: longitude min
+    :param lon_max: longitude max
+    :param date_start: start date
+    :param date_end: end date
+    :param locality: name of the locality for output file naming
+    :param outpath: where to wrtie the result file
+    :param screen_print: if True, results are printed to the screen
+    :return: nothing
+    """
     ## SOURCES
     sources = {
         'sst':      "https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41.csv?"
@@ -80,7 +95,7 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
         except:
             print("FAILED:" + fout)
 
-    return(df)
+    return
 
 
 if __name__ == '__main__':
@@ -95,7 +110,7 @@ if __name__ == '__main__':
                                                  "- pp1d, pp8d, pp1m: Primary Productivity, 1 day, 8 day, 1 month \n"
                                                  "- ssc8d, ssc1m: Seascapes classes, 8 day, 1 month \n"
                                                  "- prec1d: Total daily rainfall \n"
-                                                 "NOTE: THINK before request. Do not ask for large grids and long periods of time",
+                                                 "NOTE: THINK before request. Do not ask for large grid over a long period of time",
                                      formatter_class=RawDescriptionHelpFormatter)
     parser.add_argument('-param', dest='param', help='latitude in decimal degrees', nargs='+', required=True)
     parser.add_argument('-latmin', dest='lat_min', help='latitude in decimal degrees', required=True)
@@ -104,9 +119,9 @@ if __name__ == '__main__':
     parser.add_argument('-lonmax', dest='lon_max', help='longitude in decimal degrees', required=False)
     parser.add_argument('-ds', dest='date_start', help='start date in yyyy-mm-dd', required=True)
     parser.add_argument('-de', dest='date_end', help='end date in yyyy-mm-dd', required=False)
-    parser.add_argument('-loc', dest='locality', help='name of the locality', required=False)
+    parser.add_argument('-loc', dest='locality', help='name of the locality', default="satprod", required=False)
     parser.add_argument('-out', dest='outpath', help='path where to write the result file', default='./', required=False)
-    parser.add_argument('-print', dest='screen_print', help='indicates if screen print is wanted', action='store_true',
+    parser.add_argument('-print', dest='screen_print', help='print the results to the screen', action='store_true',
                         required=False)
     args = parser.parse_args()
 
