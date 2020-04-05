@@ -76,6 +76,13 @@ optional arguments:
 
 ```
 
+### Example
+
+```
+python getSatProd.py -param sst ssta par1d ssc8d -latmin 14 -lonmin -40 -ds 2020-01-01 -de 2020-01-05 -loc middle-of-nowhere
+
+```
+
 ---------------------------
 
 ## DHW_flexiharvester
