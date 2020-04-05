@@ -10,30 +10,30 @@ Get satellite product. A versatile comprehensive tool to retrieve several parame
 
 ### Data sources: 
 
-|parameter | ERDDAP URL | 
-|----------|------------| 
-sst | https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41  
-ssta | https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41anom1day  
-poc1d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOC1day  
-poc8d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOC8day  
-poc1m | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOCmday  
-pic1d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPIC1day  
-pic8d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPIC8day  
-pic1m | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPICmday  
-chl1m | https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaMonthly   
-chl8d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaWeekly  
-chl1d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily  
-dhw | https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW  
-par1d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par01day   
-par8d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par08day  
-par1m | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par0mday  
-pp1d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1pp1day  
-pp3d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1pp3day  
-pp8d | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1pp8day  
-pp1m |  https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1ppmday  
-ssc8d | https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day  
-ssc1m | https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_4729_9ee6_ab54  
-prec1d | https://oceanwatch.pifsc.noaa.gov/erddap/griddap/hawaii_soest_5687_3d16_a6d4  
+|parameter | Description | ERDDAP URL | 
+|----------|-------------|------------| 
+sst | Multi-scale Ultra-high Resolution (MUR) SST Analysis fv04.1, Global, 0.01°, 2002-present, Daily | https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41  
+ssta | Multi-scale Ultra-high Resolution (MUR) SST Analysis Anomaly fv04.1, Global, 0.01°, 2002-present, Daily | https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41anom1day  
+poc1d | MODIS Aqua, Level-3 SMI, Global, 4km, Particulate Organic Carbon, 2003-present (1 Day Composite) | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOC1day  
+poc8d | MODIS Aqua, Level-3 SMI, Global, 4km, Particulate Organic Carbon, 2003-present (8 Day Composite) | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOC8day  
+poc1m |MODIS Aqua, Level-3 SMI, Global, 4km, Particulate Organic Carbon, 2003-present (Monthly Composite) |https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPOCmday  
+pic1d | MODIS Aqua, Level-3 SMI, Global, 4km, Particulate Inorganic Carbon, 2003-present (1 Day Composite) |https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPIC1day  
+pic8d |  MODIS Aqua, Level-3 SMI, Global, 4km, Particulate Inorganic Carbon, 2003-present (8 Day Composite) |https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPIC8day  
+pic1m |  MODIS Aqua, Level-3 SMI, Global, 4km, Particulate Inorganic Carbon, 2003-present (monthly Composite) |https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMPICmday  
+chl1m | Chlorophyll, NOAA VIIRS, Science Quality, Global 1 month | https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaMonthly   
+chl8d | Chlorophyll, NOAA VIIRS, Science Quality, Global 8 days |https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaWeekly  
+chl1d | Chlorophyll, NOAA VIIRS, Science Quality, Global 1 day |https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily  
+dhw | NOAA Coral Reef Watch Operational Daily Near-Real-Time Global 5-km Satellite Coral Bleaching Monitoring Products |  https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW  
+par1d | Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality 1 day| https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par01day   
+par8d | Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality 8 days | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par08day  
+par1m | Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality 1 month | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par0mday  
+pp1d | Primary Productivity, Aqua MODIS, NPP, Global, 2003-present, EXPERIMENTAL (1 Day Composite) | https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1pp1day  
+pp3d | Primary Productivity, Aqua MODIS, NPP, Global, 2003-present, EXPERIMENTAL (3 Day Composite) |https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1pp3day  
+pp8d | Primary Productivity, Aqua MODIS, NPP, Global, 2003-present, EXPERIMENTAL (8 Day Composite) |  https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1pp8day  
+pp1m | Primary Productivity, Aqua MODIS, NPP, Global, 2003-present, EXPERIMENTAL (Monthly Composite) |  https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1ppmday  
+ssc8d | 8_Day Global Seascapes | https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day  
+ssc1m |	Monthly Global Seascapes |https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_4729_9ee6_ab54  
+prec1d | satellite product TRMM TRMM PR 3B42 daily v7 | https://oceanwatch.pifsc.noaa.gov/erddap/griddap/hawaii_soest_5687_3d16_a6d4  
 
 
 
