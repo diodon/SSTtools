@@ -47,10 +47,9 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
                     "chlor_a[({date_start}):1:({date_end})][(0.0):1:(0.0)][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'chl1d':    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.csv?"
                     "chlor_a[({date_start}):1:({date_end})][(0.0):1:(0.0)][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
-        'dhw':      "https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csv?"
+        'dhw':      "https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km.csv?"
                     "CRW_DHW[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
                     "CRW_HOTSPOT[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
-                    "CRW_BAA[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
                     "CRW_SST[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
                     "CRW_SSTANOMALY[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'par1d':    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMH1par01day.csv?"
