@@ -29,7 +29,7 @@ def getDHW(latitude, longitude, date_start, date_end, fout):
     :return: info about number of records found and output file name
     """
 
-    serverURL = 'https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km.csv?'
+    serverURL = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csv?'
 
     varNames = ['CRW_DHW', 'CRW_HOTSPOT', 'CRW_SST', 'CRW_SSTANOMALY']
     varNames_DHW = ['time',  'latitude', 'longitude']
