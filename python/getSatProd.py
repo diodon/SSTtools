@@ -1,5 +1,6 @@
 import sys
 import os
+import traceback
 import urllib.request
 import argparse
 from argparse import RawDescriptionHelpFormatter
@@ -88,7 +89,8 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
             print(fout)
             if screen_print:
                 print(df)
-        except:
+        except Exception as e:
+            print(e)
             print("FAILED:" + fout)
 
     return

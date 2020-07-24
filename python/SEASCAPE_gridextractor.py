@@ -1,7 +1,8 @@
 import sys
 import argparse
 
-import urllib
+import urllib.request
+import urllib.parse
 
 
 def makeRange(startValue, endValue):
