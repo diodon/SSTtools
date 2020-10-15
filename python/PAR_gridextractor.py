@@ -63,7 +63,7 @@ def getPAR(type, minlat, minlon, maxlat, maxlon, date_start, date_end, format, f
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Harvest SEASCAPE classes (grid) from NOAA CoastWatch ERDDAP server. The results are stored in a netCDF file')
+    parser = argparse.ArgumentParser(description='Harvest monthly, weekly or daily PAR (Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality, 2003-present) from NOAA CoastWatch ERDDAP server. The results are stored in a netCDF or CSV file')
     parser.add_argument('-type', dest='type', help='monthly (m), 8day (8d) or (1d) daily product', required=True)
     parser.add_argument('-minlat', dest='minlat', help='latitude in decimal degrees. Southern hemisphere negative', required=True)
     parser.add_argument('-minlon', dest='minlon', help='longitude in decimal degrees. Western hemisphere negative', required=True)
