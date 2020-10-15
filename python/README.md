@@ -201,3 +201,27 @@ optional arguments:
 
 ```
 
+## PAR_gridextractor
+
+Extract monthly, weekly or daily PAR values
+
+```
+usage: PAR_gridextractor.py [-h] -type TYPE -minlat MINLAT -minlon MINLON -maxlat MAXLAT -maxlon MAXLON -from DATE_START -to
+                            DATE_END -format FORMAT [-fout FOUT]
+
+Harvest monthly, weekly or daily PAR (Photosynthetically Available Radiation, Aqua MODIS, NPP, L3SMI, Global, 4km, Science Quality,
+2003-present) from NOAA CoastWatch ERDDAP server. The results are stored in a netCDF or CSV file
+
+optional arguments:
+  -h, --help        show this help message and exit
+  -type TYPE        monthly (m), 8day (8d) or (1d) daily product
+  -minlat MINLAT    latitude in decimal degrees. Southern hemisphere negative
+  -minlon MINLON    longitude in decimal degrees. Western hemisphere negative
+  -maxlat MAXLAT    latitude in decimal degrees. Southern hemisphere negative
+  -maxlon MAXLON    longitude in decimal degrees. Western hemisphere negative
+  -from DATE_START  start date in yyyy-mm-dd
+  -to DATE_END      end date in yyyy-mm-dd
+  -format FORMAT    output format: nc or csv
+  -fout FOUT        name of the output file without extension. Default PARgrid_output
+
+```
