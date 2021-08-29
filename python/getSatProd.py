@@ -73,8 +73,10 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
         'ssc1m':    "https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_4729_9ee6_ab54.csv?"
                     "CLASS[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
                     "P[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
-        'prec1d':   "https://oceanwatch.pifsc.noaa.gov/erddap/griddap/hawaii_soest_5687_3d16_a6d4.csv?"
-                    "precipitation[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]"
+        'prec1d':   "https://coastwatch.pfeg.noaa.gov/erddap/griddap/chirps20GlobalDailyP05.csv?"
+                    "precip[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]"
+        'prec1m':   "https://coastwatch.pfeg.noaa.gov/erddap/griddap/chirps20GlobalMonthlyP05.csv?"
+                    "precip[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]"
     }
 
 
@@ -107,7 +109,8 @@ if __name__ == '__main__':
                                                  "- par1d, par8d, par1m: Total Photosynthetic Available Radiation, 1 day, 8 day, 1 month \n"
                                                  "- pp1d, pp8d, pp1m: Primary Productivity, 1 day, 8 day, 1 month \n"
                                                  "- ssc8d, ssc1m: Seascapes classes, 8 day, 1 month \n"
-                                                 "- prec1d: Total daily rainfall \n"
+                                                 "- prec1d: CHIRPS Total daily rainfall \n"
+                                                 "- prec1m: CHIRPS Total monthly rainfall \n"
                                                  "NOTE: THINK before request. Do not ask for large grid over a long period of time",
                                      formatter_class=RawDescriptionHelpFormatter)
     parser.add_argument('-param', dest='param', help='latitude in decimal degrees', nargs='+', required=True)
