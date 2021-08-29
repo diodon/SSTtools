@@ -113,7 +113,7 @@ if __name__ == '__main__':
                                                  "- prec1m: CHIRPS Total monthly rainfall \n"
                                                  "NOTE: THINK before request. Do not ask for large grid over a long period of time",
                                      formatter_class=RawDescriptionHelpFormatter)
-    parser.add_argument('-param', dest='param', help='latitude in decimal degrees', nargs='+', required=True)
+    parser.add_argument('-param', dest='param', help='code name of the parameter, like sst', nargs='+', required=True)
     parser.add_argument('-latmin', dest='lat_min', help='start latitude in decimal degrees', required=True)
     parser.add_argument('-latmax', dest='lat_max', help='end latitude in decimal degrees. If missing extract for start latitude only',
                         required=False)
