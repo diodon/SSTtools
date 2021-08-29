@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 import os
 import traceback
@@ -48,7 +50,8 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
                     "chlor_a[({date_start}):1:({date_end})][(0.0):1:(0.0)][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'chl1d':    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/nesdisVHNSQchlaDaily.csv?"
                     "chlor_a[({date_start}):1:({date_end})][(0.0):1:(0.0)][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
-        'dhw':      "https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW.csv?"
+                    #https://coastwatch.pfeg.noaa.gov/erddap/griddap/NOAA_DHW
+        'dhw':      "https://pae-paha.pacioos.hawaii.edu/erddap/griddap/dhw_5km.csv?"
                     "CRW_DHW[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
                     "CRW_HOTSPOT[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
                     "CRW_SST[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
@@ -74,17 +77,17 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
                     "CLASS[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})],"
                     "P[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'prec1d':   "https://coastwatch.pfeg.noaa.gov/erddap/griddap/chirps20GlobalDailyP05.csv?"
-                    "precip[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]"
+                    "precip[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]",
         'prec1m':   "https://coastwatch.pfeg.noaa.gov/erddap/griddap/chirps20GlobalMonthlyP05.csv?"
                     "precip[({date_start}):1:({date_end})][({lat_min}):1:({lat_max})][({lon_min}):1:({lon_max})]"
     }
-
 
     for par in params:
         print(par.upper())
         fout = os.path.join(locality + "_" + par + "_" + date_start.replace("-", "") + "-" + date_end.replace("-", "") + ".csv")
         url = sources[par].format(lat_min=lat_min, lat_max = lat_max,  lon_min=lon_min, lon_max=lon_max,
                                   date_start = date_start, date_end = date_end)
+        print(url)
         try:
             df = pd.read_csv(url)
             df.to_csv(os.path.join(outpath, fout), index=False)
@@ -99,7 +102,6 @@ def getParams(params, lat_min, lat_max, lon_min, lon_max, date_start, date_end, 
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
     parser = argparse.ArgumentParser(description="Get different satellite products from NOAAs ERDDAP servers. The valid parameters are: \n"
                                                  "- sst, ssta: MURSST cloudless sea surface temperature, and  sst anomaly  \n"
                                                  "- poc1d, poc8d, poc1m: MODIS particulate organic cabon, 1 day, 8 day, 1 month \n"
@@ -129,7 +131,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     parameter_list = ['sst', 'ssta', 'sstclim', 'poc1d', 'poc8d', 'poc1m', 'pic1d', 'pic8d', 'pic1m', 'chl1d', 'chl8d',
-                      'chl1m', 'dhw', 'par1d', 'par8d', 'par1m', 'pp1d', 'pp8d', 'pp1m', 'ssc8d', 'ssc1m', 'prec1d']
+                      'chl1m', 'dhw', 'par1d', 'par8d', 'par1m', 'pp1d', 'pp8d', 'pp1m', 'ssc8d', 'ssc1m', 'prec1d', 'prec1m']
 
     if args.date_end == None:
         args.date_end = args.date_start
